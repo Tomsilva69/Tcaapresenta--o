@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenstore | Criar Conta</title>
+    <link rel="shortcut icon" href="greenstore.logo.png" />
+    <link rel="stylesheet" href="lojainicial.css" />
+    <link rel="stylesheet" href="criar.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="header-inner-content">
+
+            <a href="lojainicial.html" style="text-decoration: none;">
+                <h1 class="logo">GREEN<span>STORE</span></h1></a>
+
+            <nav>
+                <ul>
+                    <li><a href="produtos.html"></a></li>
+                    <li><a href="tenis.html"></a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="criarconta.html">Criar Conta</a></li>
+                    <li><a href="conta.html">Login</a></li>
+                </ul>
+            </nav>
+
+            <div class="cart-button">
+
+                <a href="carrinho.html">
+                 <span class="nav-icon-container"><i class="bi bi-bag"></i></span>
+                 
+                </a>
+                <span class="count-number">0</span>
+                
+         
+                     </div>
+
+                <img src="menu.png" class="menu-button" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="page-inner-content">
+            <h2 class="section-title">Criar Conta</h2>
+            <div class="subtitle-underline"></div>
+            <div class="form-container">
+                <form action="processar_criar_conta.php" method="post">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+
+                    <label for="confirmar_senha">Confirmar Senha:</label>
+                    <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+
+                    <button type="submit">Criar Conta</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="gray-background">
+        <div class="page-inner-content footer-content">
+            <div class="download-options">
+                <p>Baixe nossa Aplicação</p>
+                <p>Baixe nossa Aplicação Para Android e iOS</p>
+                <div>
+                    <img src="products/play-store.png" alt="" />
+                    <img src="products/app-store.png" alt="" />
+                </div>
+            </div>
+            <div class="logo-footer">
+                <h1 class="logo">GREEN<span>STORE</span></h1>
+                <p>
+                    Green Store é um site Ecomerce que simula uma loja de venda de Acessórios e Tênis StreetWear
+                    (Skatista).
+                </p>
+            </div>
+            <div class="links-footer">
+                <h3>Links</h3>
+                <ul>
+                    <li>Cupons</li>
+                    <li>Políticas</li>
+                    <li>Redes @</li>
+                    <li>Torne-se Afiliado</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="page-inner-content" />
+        <div class="page-inner-content copyright">
+            <p>Copyright 2024 Yuri & Everton - Todos Direitos Reservados</p>
+        </div>
+    </footer>
+
+    <!-- Script para menu responsivo -->
+    <script>
+        const navbar = document.querySelector(".navbar");
+        const menuButton = document.querySelector(".menu-button");
+
+        menuButton.addEventListener("click", () => {
+            navbar.classList.toggle("show-menu");
+        });
+    </script>
+</body>
+
+</html>

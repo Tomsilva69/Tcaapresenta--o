@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="carrinho.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="greenstore.logo.png">
+</head>
+<body>
+    <header>
+        <span>Carrinho de compras do <b>Usuário</b></span>
+    </header>
+    <main>
+        <div class="page-title">Seu carrinho</div>
+        <div class="content">
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produtos</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Total</th>
+                            <th>-</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="product">
+                                    <img src="caixaqix.png" alt="">
+                                    <div class="info">
+                                        <div class="name">Box Premium QIX + Chorão Eterno 01</div>
+                                        <div class="category">QIX</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="price">R$ 999.99</td>
+                            <td>
+                                <div class="qty">
+                                    <button class="minus"><i class='bx bx-minus'></i></button>
+                                    <span class="quantity">1</span>
+                                    <button class="plus"><i class='bx bx-plus'></i></button>
+                                </div>
+                            </td>
+                            <td class="total"> R$ 999.99</td>
+                            <td>
+                                <button class="remove"><i class='bx bx-x'></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="product">
+                                    <img src="mochilahocks.png" alt="">
+                                    <div class="info">
+                                        <div class="name">Mochila HOCKS</div>
+                                        <div class="category">HOCKS</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="price"> R$ 269.99 </td>
+                            <td>
+                                <div class="qty">
+                                    <button class="minus"><i class='bx bx-minus'></i></button>
+                                    <span class="quantity">1</span>
+                                    <button class="plus"><i class='bx bx-plus'></i></button>
+                                </div>
+                            </td>
+                            <td class="total"> R$ 269.99</td>
+                            <td>
+                                <button class="remove"><i class='bx bx-x'></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="product">
+                                    <img src="relogio3.png" alt="">
+                                    <div class="info">
+                                        <div class="name">Relógio G-SHOCK</div>
+                                        <div class="category">RELOGIOS</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="price"> R$ 499.99</td>
+                            <td>
+                                <div class="qty">
+                                    <button class="minus"><i class='bx bx-minus'></i></button>
+                                    <span class="quantity">1</span>
+                                    <button class="plus"><i class='bx bx-plus'></i></button>
+                                </div>
+                            </td>
+                            <td class="total"> R$ 499.99</td>
+                            <td>
+                                <button class="remove"><i class='bx bx-x'></i></button>
+                            </td>
+                        </tr>
+                        <!-- Repeat similar rows for other products -->
+                    </tbody>
+                </table>
+            </section>
+            <aside>
+                <div class="box">
+                    <header>Resumo da compra</header>
+                    <div class="info">
+                        <div><span>Sub total</span><span class="subtotal"></span></div>
+                        <div><span>Frete</span><span>Gratuito</span></div>
+                        <div><button>Adicionar cupom de desconto <i class='bx bxs-right-arrow-alt'></i></button></div>
+                    </div>
+                    <footer>
+                        <span>Total</span>
+                        <span class="grand-total"></span>
+                    </footer>
+                </div>
+                <button class="checkout">Finalizar Compra</button>
+                <!-- <button oncick=checkout()>Finalizar Compra</button> -->
+            </aside>
+        </div>
+    </main>
+
+    <script>
+        // Carrega os produtos do carrinho do localStorage e exibe na página
+        const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        const carrinhoDiv = document.getElementById('carrinho');
+
+        if (carrinho.length === 0) {
+            carrinhoDiv.innerHTML = '<p>O carrinho está vazio.</p>';
+        } else {
+            carrinho.forEach(produto => {
+                const produtoDiv = document.createElement('div');
+                produtoDiv.textContent = produto;
+                carrinhoDiv.appendChild(produtoDiv);
+            });
+        }
+    </script>
+
+   
+    <script src="carrinho.js"></script>
+        
+</body>
+</html>
