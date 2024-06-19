@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="greenstore.logo.png">
+    <title>Carrinho de Compras</title>
+</head>
+<body>
+    <h1>Carrinho de Compras</h1>
+    <div id="carrinho"></div>
+
+    <script>
+        // Carrega os produtos do carrinho do localStorage e exibe na página
+        const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        const carrinhoDiv = document.getElementById('carrinho');
+
+        if (carrinho.length === 0) {
+            carrinhoDiv.innerHTML = '<p>O carrinho está vazio.</p>';
+        } else {
+            carrinho.forEach(produto => {
+                const produtoDiv = document.createElement('div');
+                produtoDiv.textContent = produto;
+                carrinhoDiv.appendChild(produtoDiv);
+            });
+        }
+    </script>
+</body>
+</html>
