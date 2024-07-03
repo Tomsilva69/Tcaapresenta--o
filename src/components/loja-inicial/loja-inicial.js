@@ -93,8 +93,6 @@ function cartNumbers(products)
 
   localStorage.setItem('cartNumbers',1);
 
-  // console.log(document.querySelector('.count-number'));
-
 
   document.querySelector( '.count-number').textContent=1;
     }
